@@ -1,0 +1,51 @@
+dataset_name = llff
+datadir = /home/ubuntu/data/data4_playground/
+expname = playground
+basedir = ./logs
+
+downsample_train = 4.0
+ndc_ray = 1
+
+n_iters = 30000
+batch_size = 4096
+
+N_voxel_init = 2097156 # 128**3
+N_voxel_final = 216000000  # 600**3
+upsamp_list = [2000,3000,4000,5500]
+update_AlphaMask_list = [5000]
+
+N_vis = -1 # vis all testing images
+vis_every = 10000
+
+render_test = 1
+render_path = 1
+
+n_lamb_sigma = [16,4,4]
+n_lamb_sh = [48,12,12]
+model_name = PaletteTensorVM
+
+shadingMode = PLT_AlphaBlend
+fea2denseAct = relu
+
+view_pe = 0
+fea_pe = 0
+
+TV_weight_density = 50.0
+TV_weight_app = 50.0
+soft_l0_sharpness = 36.
+
+Plt_bd_weight = 1.
+Plt_opaque_sps_weight = 0
+Plt_color_weight = 0.0005
+color_sps_weight = 0.001
+Plt_loss_sigma_x = 0.
+Plt_loss_sigma_c = 0.
+Plt_loss_sigma_s = 0.
+Plt_bilaterFilter=0.
+depth_loss=0
+palette_loss=1e-4
+color_correction_weight=1e-7
+
+palette_path = ./data_palette/drums/rgb_palette.npy
+learn_palette = True
+palette_init = userinput
